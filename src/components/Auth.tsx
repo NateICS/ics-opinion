@@ -1,13 +1,16 @@
 "use client"
 
-import Link from "next/link"
-import styles from "@/styles/NavBar.module.css"
 import { auth } from "@/firebase"
-import { User, onAuthStateChanged } from "firebase/auth"
+import styles from "@/styles/NavBar.module.css"
+import { User, onAuthStateChanged, signOut } from "firebase/auth"
+import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { useState } from "react"
 
 const Auth = () => {
   const [user, setUser] = useState<User | null>(null)
+
+  const router = useRouter()
 
   onAuthStateChanged(auth, (user) => {
     if (user) {
@@ -16,10 +19,19 @@ const Auth = () => {
       setUser(null)
     }
   })
+
+  const out = () => {
+    signOut(auth)
+
+    router.push("/")
+  }
+
   return (
     <>
       {user ? (
-        <p className={styles.link + " " + styles.right}>Yes</p>
+        <p onClick={out} className={styles.link + " " + styles.right}>
+          Sign out
+        </p>
       ) : (
         <Link href={"/signin"} className={styles.link + " " + styles.right}>
           Sign In

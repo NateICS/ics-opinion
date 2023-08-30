@@ -4,16 +4,16 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
+  border: none;
+  border-radius: 30px;
+
+  background-color: white;
+
   width: 540px;
   height: 150px;
 
-  border-radius: 30px;
-  border: none;
-
   font-size: 52px;
   font-family: inherit;
-
-  background-color: white;
 }
 
 .button:hover {

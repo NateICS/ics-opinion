@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "clean": "rm -rf pnpm-lock.yaml node_modules/ .next/"
+    "lint": "next lint"
   },
   "dependencies": {
     "firebase": "^10.3.0",
