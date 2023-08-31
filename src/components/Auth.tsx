@@ -35,7 +35,7 @@ const Auth = () => {
         <Link href={"/signin"} className={styles.link + " " + styles.right}>
           Sign In
         </Link>
-      )}{" "}
+      )}
     </>
   )
 }

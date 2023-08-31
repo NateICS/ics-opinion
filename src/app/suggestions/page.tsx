@@ -13,7 +13,9 @@ const Suggestions = () => {
     if (user) {
       setUser(user)
     } else {
-      router.replace("/signin")
+      try {
+        router.push("/signin")
+      } catch (e) {}
     }
   })
 
