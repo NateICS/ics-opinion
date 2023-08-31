@@ -4,7 +4,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
-  border: none;
+  border: 6px solid #3a57c9;
   border-radius: 30px;
 
   background-color: white;
@@ -12,6 +12,7 @@
   width: 540px;
   height: 150px;
 
+  color: #31333b;
   font-size: 52px;
   font-family: inherit;
 }

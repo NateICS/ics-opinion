@@ -1,12 +1,12 @@
 .header {
-  text-align: center;
+  margin: 30px 0;
   font-size: 64px;
+  text-align: center;
 }
 
 .body {
-  margin: 10px auto 42px;
+  margin: 0 auto 42px;
   width: 80%;
-
   font-size: 24px;
 }
 
@@ -20,16 +20,20 @@
 
   margin: auto;
 
+  border: 6px solid #3a57c9;
+  border-radius: 30px;
+
+  background-color: white;
+
   width: 300px;
   height: 200px;
-
-  border-radius: 30px;
-  background-color: white;
 
   text-align: center;
 }
 
 .text {
-  margin-top: 72px;
-  font-size: 32px;
+  margin-top: 64px;
+
+  color: #31333b;
+  font-size: 36px;
 }

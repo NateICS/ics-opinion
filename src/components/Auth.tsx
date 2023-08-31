@@ -9,7 +9,6 @@ import { useState } from "react"
 
 const Auth = () => {
   const [user, setUser] = useState<User | null>(null)
-
   const router = useRouter()
 
   onAuthStateChanged(auth, (user) => {
@@ -20,16 +19,16 @@ const Auth = () => {
     }
   })
 
-  const out = () => {
-    signOut(auth)
-
-    router.push("/")
-  }
-
   return (
     <>
       {user ? (
-        <p onClick={out} className={styles.link + " " + styles.right}>
+        <p
+          onClick={async () => {
+            await signOut(auth)
+            router.push("/")
+          }}
+          className={styles.link + " " + styles.right}
+        >
           Sign out
         </p>
       ) : (
