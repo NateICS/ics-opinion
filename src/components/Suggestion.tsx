@@ -1,17 +1,21 @@
 import styles from "@/styles/Suggestions.module.css"
+import { emailToName } from "@/utils/emailToName"
+import { format } from "date-fns"
 import { QueryDocumentSnapshot } from "firebase/firestore"
 import Link from "next/link"
 
 const Suggestion = ({ suggestion }: { suggestion: QueryDocumentSnapshot }) => {
-  const { title, body } = suggestion.data()
+  const { title, body, author, time } = suggestion.data()
 
   return (
     <div className={styles.card}>
-      <Link href={"/suggestions/" + suggestion.id}>
-        <h1>{title}</h1>
-      </Link>
+      <h1 className={styles.title}>
+        <Link href={"/suggestions/" + suggestion.id}>{title}</Link>
+      </h1>
 
-      <p>{body}</p>
+      <p className={styles.body}>{emailToName(author)}</p>
+      <p className={styles.body}>{format(new Date(time), "dd/MM/yyyy")}</p>
+      <p className={styles.body}>{body}</p>
     </div>
   )
 }

@@ -20,10 +20,9 @@
 
   margin: auto;
 
-  border: 6px solid #3a57c9;
   border-radius: 30px;
 
-  background-color: white;
+  background-color: #4c4f5c;
 
   width: 300px;
   height: 200px;
@@ -34,6 +33,6 @@
 .text {
   margin-top: 64px;
 
-  color: #31333b;
+  color: white;
   font-size: 36px;
 }

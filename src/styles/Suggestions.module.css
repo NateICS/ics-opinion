@@ -6,9 +6,9 @@
 .card {
   flex: 1;
 
-  margin: 10px;
+  margin: 20px 10px 0;
 
-  border: 1px solid #000;
+  border: 1px solid black;
   border-radius: 20px;
 
   background-color: #4c4f5c;
@@ -17,4 +17,53 @@
 
   min-width: 380px;
   max-width: 600px;
+  min-height: 200px;
+}
+
+.title {
+  margin: 10px 10px 0;
+  width: fit-content;
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.title:hover {
+  text-decoration: underline;
+}
+
+.body {
+  margin-left: 10px;
+}
+
+.new {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+
+  border-radius: 50%;
+
+  background-color: white;
+
+  width: 80px;
+  height: 80px;
+}
+
+.plus {
+  position: absolute;
+  border-radius: 50px;
+  background-color: black;
+}
+
+.vertical {
+  top: calc(50% - 25px);
+  left: calc(50% - 4px);
+  width: 8px;
+  height: 50px;
+}
+
+.horizontal {
+  top: calc(50% - 4px);
+  left: calc(50% - 25px);
+  width: 50px;
+  height: 8px;
 }

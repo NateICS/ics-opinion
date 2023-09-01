@@ -1,6 +1,5 @@
 .bar {
-  border-bottom: 6px solid #3a57c9;
-  background-color: white;
+  background-color: #4c4f5c;
 }
 
 .link {
@@ -8,7 +7,6 @@
 
   margin: 10px;
 
-  color: #31333b;
   font-size: 24px;
 }
 
