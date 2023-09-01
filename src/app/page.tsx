@@ -1,5 +1,10 @@
 import styles from "@/styles/Home.module.css"
+import { Metadata } from "next"
 import Link from "next/link"
+
+export const metadata: Metadata = {
+  title: "ICS Opinion",
+}
 
 const Home = () => {
   return (

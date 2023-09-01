@@ -1,6 +1,6 @@
-import Link from "next/link"
 import styles from "@/styles/NavBar.module.css"
-import Auth from "./Auth"
+import Link from "next/link"
+import AuthButton from "./AuthButton"
 
 const NavBar = () => {
   return (
@@ -15,7 +15,7 @@ const NavBar = () => {
         Polls
       </Link>
 
-      <Auth />
+      <AuthButton />
     </div>
   )
 }

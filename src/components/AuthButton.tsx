@@ -2,34 +2,30 @@
 
 import { auth } from "@/firebase"
 import styles from "@/styles/NavBar.module.css"
-import { User, onAuthStateChanged, signOut } from "firebase/auth"
+import { onAuthStateChanged, signOut } from "firebase/auth"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 
-const Auth = () => {
-  const [user, setUser] = useState<User | null>(null)
+const AuthButton = () => {
+  const [user, setUser] = useState(false)
   const router = useRouter()
 
   onAuthStateChanged(auth, (user) => {
-    if (user) {
-      setUser(user)
-    } else {
-      setUser(null)
-    }
+    setUser(!!user)
   })
+
+  const out = () => {
+    signOut(auth)
+
+    router.push("/")
+  }
 
   return (
     <>
       {user ? (
-        <p
-          onClick={async () => {
-            await signOut(auth)
-            router.push("/")
-          }}
-          className={styles.link + " " + styles.right}
-        >
-          Sign out
+        <p onClick={out} className={styles.link + " " + styles.right}>
+          Sign Out
         </p>
       ) : (
         <Link href={"/signin"} className={styles.link + " " + styles.right}>
@@ -40,4 +36,4 @@ const Auth = () => {
   )
 }
 
-export default Auth
+export default AuthButton

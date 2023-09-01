@@ -1,32 +1,29 @@
-"use client"
+import Suggestion from "@/components/Suggestion"
+import { db } from "@/firebase"
+import styles from "@/styles/Suggestions.module.css"
+import { QueryDocumentSnapshot, collection, getDocs } from "firebase/firestore"
 
-import { auth } from "@/firebase"
-import { User, onAuthStateChanged } from "firebase/auth"
-import { useRouter } from "next/navigation"
-import { useState } from "react"
+const getSuggestions = async () => {
+  const suggestions: QueryDocumentSnapshot[] = []
 
-const Suggestions = () => {
-  const [user, setUser] = useState<User>()
-  const router = useRouter()
-
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      setUser(user)
-    } else {
-      try {
-        router.push("/signin")
-      } catch (e) {}
-    }
+  const snap = await getDocs(collection(db, "suggestions"))
+  snap.forEach((suggestion) => {
+    suggestions.push(suggestion)
   })
+
+  return suggestions
+}
+
+const Suggestions = async () => {
+  const suggestions = await getSuggestions()
 
   return (
     <>
-      {user && (
-        <>
-          <h1>Suggestions</h1>
-          <p>sf</p>
-        </>
-      )}
+      <div className={styles.container}>
+        {suggestions.map((suggestion) => (
+          <Suggestion suggestion={suggestion} />
+        ))}
+      </div>
     </>
   )
 }
