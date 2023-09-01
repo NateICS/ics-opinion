@@ -3,6 +3,8 @@ import { db } from "@/firebase"
 import styles from "@/styles/Suggestions.module.css"
 import { QueryDocumentSnapshot, collection, getDocs } from "firebase/firestore"
 
+export const dynamic = "force-dynamic"
+
 const getSuggestions = async () => {
   const suggestions: QueryDocumentSnapshot[] = []
 
