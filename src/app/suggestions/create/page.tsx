@@ -4,6 +4,7 @@ import { auth, db } from "@/firebase"
 import { addDoc, collection } from "firebase/firestore"
 import { useRouter } from "next/navigation"
 import { FormEvent, useState } from "react"
+import styles from "@/styles/Create.module.css"
 
 const Create = () => {
   const [title, setTitle] = useState("")
@@ -25,23 +26,25 @@ const Create = () => {
   }
 
   return (
-    <>
+    <div className={styles.container}>
       <form onSubmit={submit}>
         <input
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Title"
+          className={styles.input}
         />
 
-        <input
+        <textarea
           value={body}
           onChange={(e) => setBody(e.target.value)}
           placeholder="Body"
+          className={styles.input + " " + styles.body}
         />
 
-        <button>Submit</button>
+        <button className={styles.button}>Submit</button>
       </form>
-    </>
+    </div>
   )
 }
 

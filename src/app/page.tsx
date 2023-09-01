@@ -1,6 +1,5 @@
 import styles from "@/styles/Home.module.css"
 import { Metadata } from "next"
-import Link from "next/link"
 
 export const metadata: Metadata = {
   title: "ICS Opinion",
@@ -22,15 +21,6 @@ const Home = () => {
         Nunc at iaculis leo. Donec blandit rutrum feugiat. In rhoncus laoreet
         vestibulum.
       </p>
-
-      <div className={styles.grid}>
-        <Link href={"/suggestions"} className={styles.card}>
-          <p className={styles.text}>Suggestions</p>
-        </Link>
-        <Link href={"/polls"} className={styles.card}>
-          <p className={styles.text}>Polls</p>
-        </Link>
-      </div>
     </>
   )
 }

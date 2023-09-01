@@ -15,7 +15,9 @@ const Suggestion = ({ suggestion }: { suggestion: QueryDocumentSnapshot }) => {
 
       <p className={styles.body}>{emailToName(author)}</p>
       <p className={styles.body}>{format(new Date(time), "dd/MM/yyyy")}</p>
-      <p className={styles.body}>{body}</p>
+      <p className={styles.body}>
+        {body.length > 300 ? body.slice(0, 300) + "..." : body}
+      </p>
     </div>
   )
 }

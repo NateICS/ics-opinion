@@ -1,38 +1,11 @@
 .header {
-  margin: 30px 0;
-  font-size: 64px;
+  margin: 2.5rem 0;
+  font-size: 6rem;
   text-align: center;
 }
 
 .body {
-  margin: 0 auto 42px;
+  margin: 0 auto 10rem;
   width: 80%;
-  font-size: 24px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: auto auto;
-}
-
-.card {
-  display: inline-block;
-
-  margin: auto;
-
-  border-radius: 30px;
-
-  background-color: #4c4f5c;
-
-  width: 300px;
-  height: 200px;
-
-  text-align: center;
-}
-
-.text {
-  margin-top: 64px;
-
-  color: white;
-  font-size: 36px;
+  font-size: 2rem;
 }

@@ -18,7 +18,7 @@ const getSuggestion = async (id: string) => {
   return suggestion
 }
 
-const Id = async ({ params: { id } }: Params) => {
+const SuggestionId = async ({ params: { id } }: Params) => {
   const suggestion = await getSuggestion(id)
   const { title, body, time, author } = suggestion.data()
 
@@ -33,4 +33,4 @@ const Id = async ({ params: { id } }: Params) => {
   )
 }
 
-export default Id
+export default SuggestionId

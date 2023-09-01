@@ -4,16 +4,16 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
-  border: 6px solid #3a57c9;
-  border-radius: 30px;
+  border: none;
+  border-radius: 2rem;
 
-  background-color: white;
+  background-color: #4c4f5c;
 
-  width: 540px;
-  height: 150px;
+  width: 40rem;
+  height: 10rem;
 
-  color: #31333b;
-  font-size: 52px;
+  color: white;
+  font-size: 3.4rem;
   font-family: inherit;
 }
 

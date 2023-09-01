@@ -3,28 +3,60 @@
   flex-wrap: wrap;
 }
 
+.new {
+  position: fixed;
+  right: 3rem;
+  bottom: 3rem;
+
+  border-radius: 50%;
+  background-color: white;
+
+  width: 6rem;
+  height: 6rem;
+}
+
+.plus {
+  position: absolute;
+  border-radius: 3.2rem;
+  background-color: black;
+}
+
+.vertical {
+  top: calc(50% - 1.5rem);
+  left: calc(50% - 0.25rem);
+  width: 0.5rem;
+  height: 3rem;
+}
+
+.horizontal {
+  top: calc(50% - 0.25rem);
+  left: calc(50% - 1.5rem);
+  width: 3rem;
+  height: 0.5rem;
+}
+
+/* Suggestion Component */
+
 .card {
   flex: 1;
+  margin: 2rem;
 
-  margin: 20px 10px 0;
-
-  border: 1px solid black;
-  border-radius: 20px;
-
+  border-radius: 1.2rem;
   background-color: #4c4f5c;
 
-  padding: 10px;
+  padding: 2rem;
 
-  min-width: 380px;
-  max-width: 600px;
-  min-height: 200px;
+  min-width: 24rem;
+  min-height: 12rem;
+  max-height: 30rem;
+
+  text-overflow: ellipsis;
 }
 
 .title {
-  margin: 10px 10px 0;
   width: fit-content;
-  font-size: 32px;
-  line-height: 40px;
+  font-size: 2.8rem;
+  line-height: 3.6rem;
 }
 
 .title:hover {
@@ -32,38 +64,6 @@
 }
 
 .body {
-  margin-left: 10px;
-}
-
-.new {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-
-  border-radius: 50%;
-
-  background-color: white;
-
-  width: 80px;
-  height: 80px;
-}
-
-.plus {
-  position: absolute;
-  border-radius: 50px;
-  background-color: black;
-}
-
-.vertical {
-  top: calc(50% - 25px);
-  left: calc(50% - 4px);
-  width: 8px;
-  height: 50px;
-}
-
-.horizontal {
-  top: calc(50% - 4px);
-  left: calc(50% - 25px);
-  width: 50px;
-  height: 8px;
+  margin-top: 0.2rem;
+  font-size: 1.4rem;
 }

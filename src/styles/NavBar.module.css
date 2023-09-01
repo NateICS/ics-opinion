@@ -5,18 +5,18 @@
 .link {
   display: inline-block;
 
-  margin: 10px;
+  margin: 0.8rem;
 
-  font-size: 24px;
+  font-size: 2rem;
 }
 
 .left {
-  margin-left: 20px;
+  margin-left: 1.2rem;
 }
 
 .right {
   float: right;
-  margin-right: 20px;
+  margin-right: 1.2rem;
 }
 
 .right:hover {

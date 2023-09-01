@@ -24,10 +24,7 @@ const Suggestions = async () => {
     <>
       <div className={styles.container}>
         {suggestions.map((suggestion, i) => (
-          <>
-            <Suggestion key={i} suggestion={suggestion} />
-            <Suggestion key={i} suggestion={suggestion} />
-          </>
+          <Suggestion key={i} suggestion={suggestion} />
         ))}
       </div>
 
