@@ -1,7 +1,13 @@
 import Suggestion from "@/components/Suggestion"
 import { db } from "@/firebase"
 import styles from "@/styles/Suggestions.module.css"
-import { QueryDocumentSnapshot, collection, getDocs } from "firebase/firestore"
+import {
+  QueryDocumentSnapshot,
+  collection,
+  getDocs,
+  orderBy,
+  query,
+} from "firebase/firestore"
 import Link from "next/link"
 
 export const dynamic = "force-dynamic"
@@ -9,7 +15,10 @@ export const dynamic = "force-dynamic"
 const getSuggestions = async () => {
   const suggestions: QueryDocumentSnapshot[] = []
 
-  const snap = await getDocs(collection(db, "suggestions"))
+  const snap = await getDocs(
+    query(collection(db, "suggestions"), orderBy("time", "desc")),
+  )
+
   snap.forEach((suggestion) => {
     suggestions.push(suggestion)
   })
