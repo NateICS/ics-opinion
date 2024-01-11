@@ -1,5 +1,0 @@
-{
-  "plugins": ["prettier-plugin-css-order"],
-  "semi": false,
-  "tabWidth": 2
-}

@@ -1,41 +1,29 @@
-import Suggestion from "@/components/Suggestion"
-import { db } from "@/firebase"
-import styles from "@/styles/Suggestions.module.css"
-import {
-  QueryDocumentSnapshot,
-  collection,
-  getDocs,
-  orderBy,
-  query,
-} from "firebase/firestore"
-import Link from "next/link"
+import { db } from "@/firebase";
+import styles from "@/styles/Suggestions.module.css";
+import { collection, getDocs, orderBy, query } from "firebase/firestore";
+import Link from "next/link";
+import Handler from "./Handler";
 
-export const dynamic = "force-dynamic"
+export const dynamic = "force-dynamic";
 
 const getSuggestions = async () => {
-  const suggestions: QueryDocumentSnapshot[] = []
+  const suggestions: any = [];
 
   const snap = await getDocs(
     query(collection(db, "suggestions"), orderBy("time", "desc")),
-  )
+  );
 
   snap.forEach((suggestion) => {
-    suggestions.push(suggestion)
-  })
+    suggestions.push({ id: suggestion.id, ...suggestion.data() });
+  });
 
-  return suggestions
-}
+  return suggestions;
+};
 
 const Suggestions = async () => {
-  const suggestions = await getSuggestions()
-
   return (
     <>
-      <div className={styles.container}>
-        {suggestions.map((suggestion, i) => (
-          <Suggestion key={i} suggestion={suggestion} />
-        ))}
-      </div>
+      <Handler suggestions={await getSuggestions()} />
 
       <Link href={"/suggestions/create"}>
         <div className={styles.new}>
@@ -44,7 +32,7 @@ const Suggestions = async () => {
         </div>
       </Link>
     </>
-  )
-}
+  );
+};
 
-export default Suggestions
+export default Suggestions;

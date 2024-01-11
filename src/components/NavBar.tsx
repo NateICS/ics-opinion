@@ -1,22 +1,19 @@
-import styles from "@/styles/NavBar.module.css"
-import Link from "next/link"
-import AuthButton from "./AuthButton"
+import styles from "@/styles/NavBar.module.css";
+import AuthButton from "./AuthButton";
 
 const NavBar = () => {
   return (
     <div className={styles.bar}>
-      <Link href={"/"} className={styles.link + " " + styles.left}>
+      <a href="/" className={styles.link + " " + styles.left}>
         ICS Opinion
-      </Link>
-      <Link href={"/suggestions"} className={styles.link}>
+      </a>
+
+      <a href="/suggestions" className={styles.link}>
         Suggestions
-      </Link>
-      <Link href={"/polls"} className={styles.link}>
-        Polls
-      </Link>
+      </a>
 
       <AuthButton />
     </div>
-  )
-}
-export default NavBar
+  );
+};
+export default NavBar;

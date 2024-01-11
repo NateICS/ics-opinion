@@ -1,6 +1,7 @@
 .container {
   display: flex;
   flex-wrap: wrap;
+  text-align: left;
 }
 
 .new {
@@ -66,4 +67,21 @@
 .body {
   margin-top: 0.2rem;
   font-size: 1.2rem;
+}
+
+.maxContainer {
+  text-align: center;
+}
+
+.select {
+  margin-top: 2rem;
+  margin-bottom: 0.4rem;
+  border: none;
+  border-radius: 1.2rem;
+  background-color: #4c4f5c;
+  width: 95%;
+  height: 3rem;
+  color: white;
+  font-size: 2rem;
+  text-align: center;
 }

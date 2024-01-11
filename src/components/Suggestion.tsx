@@ -1,11 +1,10 @@
-import styles from "@/styles/Suggestions.module.css"
-import { emailToName } from "@/utils/emailToName"
-import { format } from "date-fns"
-import { QueryDocumentSnapshot } from "firebase/firestore"
-import Link from "next/link"
+import styles from "@/styles/Suggestions.module.css";
+import { emailToName } from "@/utils/emailToName";
+import { format } from "date-fns";
+import Link from "next/link";
 
-const Suggestion = ({ suggestion }: { suggestion: QueryDocumentSnapshot }) => {
-  const { title, body, author, time } = suggestion.data()
+const Suggestion = ({ suggestion }: any) => {
+  const { title, body, author, time } = suggestion;
 
   return (
     <div className={styles.card}>
@@ -19,7 +18,7 @@ const Suggestion = ({ suggestion }: { suggestion: QueryDocumentSnapshot }) => {
         {body.length > 300 ? body.slice(0, 300) + "..." : body}
       </p>
     </div>
-  )
-}
+  );
+};
 
-export default Suggestion
+export default Suggestion;
